@@ -1,0 +1,22 @@
+<div class="container">
+  <h1>Welcome to Josh and Azeem's world</h1>
+  <h2>Join us on our wild and exciting journey at Code Division. </h2>
+
+  <p>Below are the list of the posts:</p>
+
+    <% i = 1 %>
+    <% @post.each do |x| %>
+    <a href="/show/<%=x.id%>"> <%= "#{i}. " + x.title %></a> <br>
+    <% i += 1%>
+    <% end %>
+
+  <br>
+  <hr>
+  <br>
+  <input id="putput" type="button" value="Create New Post" onclick="location.href='new';" />
+
+  <h3>The tags are listed below:</h3>
+    <% @tags.each do |x| %>
+    <a href="/show/tags/<%= x.id %>"> <%= x.name %></a>
+    <% end %>
+</div>

@@ -1,0 +1,29 @@
+<div class="container">
+ <h1>Welcome to Josh and Azeem's world</h1>
+
+  <FONT FACE="symbol">
+
+    <h3>Post title:</h3>
+    <%= @post.title %>
+
+    <h3>Content:</h3>
+    <%= @post.body %>
+<br>
+
+<h3>The tags are listed below:</h3>
+    <% @tags.each do |x| %>
+        <a href="/show/tags/<%= x.id %>"> <%= x.name %></a>
+    <% end %>
+    <br><hr>
+
+     <form action="/show/<%= @post.id %>/edit" method="get">
+        <input type="submit" value="Edit">
+    </form>
+
+    <form action="/posts/<%= @post.id %>/delete" method="post">
+      <input type="hidden" name="_method" value="delete">
+        <input type="submit" value="Delete">
+    </form>
+
+  </FONT>
+</div>

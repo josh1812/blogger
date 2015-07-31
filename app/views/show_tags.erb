@@ -1,0 +1,12 @@
+<div class="container">
+  <h1>Welcome to Josh and Azeem's world</h1>
+  <h2>Join us on our wild and exciting journey at Code Division. </h2>
+
+  <p>Below are the list of the posts in the tag:</p>
+    <% @posts.each do |x| %>
+    <a href="/show/<%=x.id%>"> <%= x.title %></a> <br>
+    <% end %>
+
+  <hr>
+  <br>
+</div>
